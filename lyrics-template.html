@@ -1,17 +1,70 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-    <title>Lyrics - &#8220;<!INSERT_HEADER>&#8221;</title>
-    <style type="text/css">@import "lyricstyle.css";</style>
-  </head>
-  <body>
-    <div id="content">
-    <h1>&#8220;<!INSERT_HEADER>&#8221;</h1>
-    <div class="navi"><a href="songs.html">Song Index</a> | <a href="albums.html">Album Index</a> | <a href="index.html">Search Lyrics</a></div>
+<head>
+  <meta charset="UTF-8">
+  <title>Where We Are - Lirik</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ffcc;
+    }
+    pre {
+      white-space: pre-wrap;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Where We Are - One Direction</h1>
+  <h2>Lirik:</h2>
+  <pre id="lyricsDisplay"></pre>
 
-    <!INSERT_TEXT>
+  <script>
+    const lyrics = `
+Here we are, standing in the light
+Of a new day, dawning so bright
+Nothing can stop us now, we're here
+Where we are is crystal clear
 
-    </div>
-  </body>
+This is where we belong
+This is where we stay strong
+Side by side, we carry on
+Where we are
+
+We've come a long way from where we began
+Time flew like sand from the palm of our hand
+But here we are, never fell apart
+Still standing tall with open hearts
+
+This is where we belong
+This is where we stay strong
+Side by side, we carry on
+Where we are
+
+Every scar, every mile
+Led us here with every trial
+Now we shine just like the stars
+Where we are, that's where we are
+    `.trim();
+
+    const display = document.getElementById("lyricsDisplay");
+    let index = 0;
+
+    function showLyrics() {
+      if (index < lyrics.length) {
+        display.textContent += lyrics.charAt(index);
+        index++;
+        setTimeout(showLyrics, 30); // Ganti kecepatan ketik di sini (ms per karakter)
+      }
+    }
+
+    showLyrics();
+  </script>
+</body>
 </html>
+
